@@ -20,12 +20,17 @@
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
   },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": "eslint --fix",
+    "*.{css,scss,js,jsx,ts,tsx,md}": "prettier --write"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint-fix": "eslint --fix './src/**/*.{js,ts,tsx}' && prettier --write ."
+    "lint-fix": "eslint --fix './src/**/*.{js,jsx,ts,tsx}' && prettier --write './**/*.{css,scss,js,jsx,ts,tsx,md}'",
+    "prepare": "husky install"
   },
   "browserslist": {
     "production": [
@@ -45,6 +50,8 @@
     "eslint": "^8.9.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-react": "^7.28.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.4",
     "prettier": "^2.5.1"
   }
 }
